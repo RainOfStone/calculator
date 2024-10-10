@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -8px;
+    margin-bottom: -8px;
+    height: 729px;
+    width: 300px;
+}
+#calc {
+    background-color: #1F2937;
+    height: 540px;
+    width: 600px;
+
+}
+#answers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    border: 1px solid black;
+    height: 40px;
+    width: 298px;
+}
+#Container2 {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+
+}
+#nums {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F2937;
+    height: 500px;
+    width: 300px;
+}
+#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #AC {
+    height: 80px;
+    width: 80px;
+}
+#Equal {
+    height: 80px;
+    width: 300px;
+}
+#add, #multiply, #divide, #subtract {
+    height: 80px;
+    width: 80px;
+}
