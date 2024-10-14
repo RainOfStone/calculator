@@ -180,6 +180,7 @@ nums.addEventListener('click', (event) => {
             break
         case 'equal':  
             specialbtn = 'equal'
+            Answer()
             break       
     }
 })
@@ -204,20 +205,49 @@ function DisplayOp2() {
         num1 = Number(num1) + Number(num2)
         console.log(num1)
         answers.textContent = `${num1} ${op2}`
+        op = op2
     }
     else if (op == '-') {
         num1 = Number(num1) - Number(num2)
         answers.textContent = `${num1} ${op2}` 
+        op = op2
     }
     else if (op == '*') {
         num1 = Number(num1) * Number(num2)
         answers.textContent = `${num1} ${op2}` 
+        op = op2
     }
     else if (op == '/') {
         num1 = Number(num1) / Number(num2)
         answers.textContent = `${num1} ${op2}` 
+        op = op2
+    }
+}
+function Answer() {
+    if (op == '+') {
+        num1 = Number(num1) + Number(num2)
+        console.log(num1)
+        answers.textContent = `${num1}`
+    }
+    else if (op == '-') {
+        num1 = Number(num1) - Number(num2)
+        answers.textContent = `${num1}` 
+    }
+    else if (op == '*') {
+        num1 = Number(num1) * Number(num2)
+        answers.textContent = `${num1}` 
+    }
+    else if (op == '/') {
+        num1 = Number(num1) / Number(num2)
+        answers.textContent = `${num1}` 
+    }
+    else if (num2 == '0' && op == '/') {
+        answers.textContent = 'everyone and their mom knows you can divide by 0'
     }
 }
 function Clear() {
     answers.textContent = ''
+    op = 'none'
+    num1 = 'none'
+    num2 = 'none'
 }
