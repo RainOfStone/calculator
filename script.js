@@ -16,19 +16,27 @@ multiply = document.querySelector('#multiply'),
 divide = document.querySelector('#divide'),
 AC = document.querySelector('#AC'),
 equal  = document.querySelector('#equal')
-let num1, num1Plus, num2 = 'none', op = 'none', // operator
-sign, // positive or negative
-specialbtn, //ac or equal
-Val1, Val2, //represent the first and second num
-FuncRan, op2 
+let num1 = 'none', num2 = 'none', op = 'none', // operator
+Val1, //represent the num
+op2, extraNum1 = 'none', extraNum2 = 'none'
 nums.addEventListener('click', (event) => {
     let target = event.target
     switch(target.id) {
         case 'zero':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '0'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '0'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '0'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '0'
@@ -37,9 +45,19 @@ nums.addEventListener('click', (event) => {
             break  
         case 'one':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '1'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '1'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '1'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '1'
@@ -48,9 +66,19 @@ nums.addEventListener('click', (event) => {
             break
         case 'two':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '2'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '2'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '2'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '2'
@@ -59,9 +87,19 @@ nums.addEventListener('click', (event) => {
             break
         case 'three':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '3'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '3'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '3'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '3'
@@ -70,9 +108,19 @@ nums.addEventListener('click', (event) => {
             break
         case 'four':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '4'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '4'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '4'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '4'
@@ -81,9 +129,19 @@ nums.addEventListener('click', (event) => {
             break
         case 'five':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '5'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '5'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '5'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '5'
@@ -92,9 +150,19 @@ nums.addEventListener('click', (event) => {
             break 
         case 'six':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '6'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '6'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '6'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '6'
@@ -103,9 +171,19 @@ nums.addEventListener('click', (event) => {
             break     
         case 'seven':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '7'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = ''
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '7'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '7'
@@ -114,9 +192,19 @@ nums.addEventListener('click', (event) => {
             break   
         case 'eight':
             Val1 = 1
-            if (op == 'none') {
-                 num1 = '8'
+            if (op == 'none' && num1 == 'none') {
+                num1 = '8'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '8'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '8'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '8'
@@ -125,9 +213,19 @@ nums.addEventListener('click', (event) => {
             break
         case 'nine':
             Val1 = 1
-            if (op == 'none') {
+            if (op == 'none' && num1 == 'none') {
                 num1 = '9'
                 DisplayNum1()
+            }
+            else if (op == 'none' && num1 != 'none') {
+                extraNum1 = '9'
+                num1 = num1 + extraNum1
+                DisplayExtraNum1()
+            }
+            else if (op != 'none' && num2 != 'none' ) {
+                extraNum2 = '9'
+                num2 = num2 + extraNum2
+                DisplayExtraNum2()
             }
             else if (op != 'none'){
                 num2 = '9'
@@ -180,16 +278,23 @@ nums.addEventListener('click', (event) => {
             break
         case 'equal':  
             specialbtn = 'equal'
+            Answer()
             break       
     }
 })
 function DisplayNum1() {
-    if (Val1 == 1 && op == 'none') {
-        answers.textContent = `${num1}` 
-        FuncRan = 'FuncNum1'
+    if (num1 != 'none') {
+        answers.textContent = `${num1}`
     }
+   }
+        // or make a function taht runs and adds the nums if FuncRan == 1 and op == 'none'
+function DisplayExtraNum1() {
+    answers.textContent = `${num1}`
 }
 function DisplayNum2() {
+    answers.textContent = `${num1} ${op} ${num2}`
+}
+function DisplayExtraNum2 () {
     answers.textContent = `${num1} ${op} ${num2}`
 }
 function DisplayOp1() {
@@ -202,22 +307,67 @@ function DisplayOp1() {
 function DisplayOp2() {
     if (op == '+') {
         num1 = Number(num1) + Number(num2)
-        console.log(num1)
         answers.textContent = `${num1} ${op2}`
+        op = op2
+        num2 = ''
     }
     else if (op == '-') {
         num1 = Number(num1) - Number(num2)
         answers.textContent = `${num1} ${op2}` 
+        op = op2
+        num2 = ''
     }
     else if (op == '*') {
         num1 = Number(num1) * Number(num2)
         answers.textContent = `${num1} ${op2}` 
+        op = op2
+        num2 = ''
     }
     else if (op == '/') {
         num1 = Number(num1) / Number(num2)
-        answers.textContent = `${num1} ${op2}` 
+        if (num2 != '0') {
+            answers.textContent = `${num1} ${op2}` 
+            op = op2
+            num2 = ''
+        }
+        else if (num2 == '0') {
+            answers.textContent = "bro you can't do that"
+            op = op2
+            num2 = ''
+        }
+    }
+}
+function Answer() {
+    if (op == '+') {
+        num1 = Number(num1) + Number(num2)
+        answers.textContent = `${num1}`
+        num2 = ''
+    }
+    else if (op == '-') {
+        num1 = Number(num1) - Number(num2)
+        answers.textContent = `${num1}` 
+        num2 = ''
+    }
+    else if (op == '*') {
+        num1 = Number(num1) * Number(num2)
+        answers.textContent = `${num1}` 
+        num2 = ''
+    }
+    else if (op == '/') {
+        num1 = Number(num1) / Number(num2)
+        if (num2 != '0') {
+            answers.textContent = `${num1}` 
+            num2 = ''
+        }
+        else if (num2 == '0') {
+            answers.textContent = "bro you can't do that"
+            num2 = ''
+        }
     }
 }
 function Clear() {
     answers.textContent = ''
+    op = 'none'
+    num1 = 'none'
+    num2 = 'none'
 }
