@@ -279,6 +279,7 @@ nums.addEventListener('click', (event) => {
         case 'equal':  
             specialbtn = 'equal'
             Answer()
+            Answer()
             break       
     }
 })
