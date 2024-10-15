@@ -177,7 +177,7 @@ nums.addEventListener('click', (event) => {
                 DisplayNum1()
             }
             else if (op == 'none' && num1 != 'none') {
-                extraNum1 = ''
+                extraNum1 = '7'
                 num1 = num1 + extraNum1
                 DisplayExtraNum1()
             }
