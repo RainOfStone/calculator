@@ -53,15 +53,19 @@ body {
     height: 80px;
     width: 120px;
 }
-#equal {
+#equal, #AC {
     height: 80px;
-    width: 600px;
+    width: 300px;
 }
 #add, #multiply, #divide, #subtract {
     height: 80px;
     width: 120px;
 }
-#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #AC, #multiply, #equal {
+#NegPos {
+    height: 80px;
+    width: 120px;
+}
+#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #AC, #multiply, #equal, #NegPos {
     font-size: 20px;
 }
 #add, #subtract, #divide {

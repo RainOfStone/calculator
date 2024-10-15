@@ -249,14 +249,6 @@ nums.addEventListener('click', (event) => {
                 console.log('first negNum', negNum, 'first op', op)
                 DisplayOp1()
             }
-            else if (op == 'none' && num1 == 'none') {
-               negNum = '-'
-               console.log('negnum', negNum)
-            }
-            else if (num1 != 'none', op != 'none' && num2 == 'none') {
-                negNum = '-'
-                console.log('negNum again', negNum)
-            }
             else if (op != 'none') {
                 op2 = '-'
                 DisplayOp2()
@@ -282,6 +274,16 @@ nums.addEventListener('click', (event) => {
                 DisplayOp2()
             }
             break
+        case 'NegPos':
+            if (op == 'none' && num1 == 'none') {
+                negNum = '-'
+                console.log('negnum', negNum)
+             }
+             else if (num1 != 'none', op != 'none' && num2 == 'none') {
+                 negNum = '-'
+                 console.log('negNum again', negNum)
+             }
+             break
         case 'AC':
             specialbtn = 'AC'
             Clear()
