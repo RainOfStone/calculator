@@ -18,7 +18,8 @@ AC = document.querySelector('#AC'),
 equal  = document.querySelector('#equal')
 let num1 = 'none', num2 = 'none', op = 'none', // operator
 Val1, //represent the num
-op2, extraNum1 = 'none', extraNum2 = 'none'
+op2, extraNum1 = 'none', extraNum2 = 'none',
+negNum = ''
 nums.addEventListener('click', (event) => {
     let target = event.target
     switch(target.id) {
@@ -243,9 +244,18 @@ nums.addEventListener('click', (event) => {
             }
             break
         case 'subtract':
-            if (op == 'none') {
+            if (op == 'none' && num1 != 'none') {
                 op = '-'
+                console.log('first negNum', negNum, 'first op', op)
                 DisplayOp1()
+            }
+            else if (op == 'none' && num1 == 'none') {
+               negNum = '-'
+               console.log('negnum', negNum)
+            }
+            else if (num1 != 'none', op != 'none' && num2 == 'none') {
+                negNum = '-'
+                console.log('negNum again', negNum)
             }
             else if (op != 'none') {
                 op2 = '-'
@@ -277,15 +287,15 @@ nums.addEventListener('click', (event) => {
             Clear()
             break
         case 'equal':  
-            specialbtn = 'equal'
-            Answer()
             Answer()
             break       
     }
 })
 function DisplayNum1() {
     if (num1 != 'none') {
-        answers.textContent = `${num1}`
+        answers.textContent = `${ negNum + num1}`
+        num1 = negNum + num1
+        negNum = ''
     }
    }
         // or make a function taht runs and adds the nums if FuncRan == 1 and op == 'none'
@@ -293,7 +303,10 @@ function DisplayExtraNum1() {
     answers.textContent = `${num1}`
 }
 function DisplayNum2() {
-    answers.textContent = `${num1} ${op} ${num2}`
+    answers.textContent = `${num1} ${op} ${ negNum + num2}`
+    num2 = negNum + num2
+    console.log('negNum3', negNum)
+
 }
 function DisplayExtraNum2 () {
     answers.textContent = `${num1} ${op} ${num2}`
@@ -330,6 +343,7 @@ function DisplayOp2() {
             answers.textContent = `${num1} ${op2}` 
             op = op2
             num2 = ''
+            console.log('num1', num1)
         }
         else if (num2 == '0') {
             answers.textContent = "bro you can't do that"
@@ -342,27 +356,39 @@ function Answer() {
     if (op == '+') {
         num1 = Number(num1) + Number(num2)
         answers.textContent = `${num1}`
-        num2 = ''
+        num2 = 'none'
+        negNum = ''
+        op = 'none'
     }
     else if (op == '-') {
         num1 = Number(num1) - Number(num2)
         answers.textContent = `${num1}` 
-        num2 = ''
+        num2 = 'none'
+        negNum = ''
+        op = 'none'
     }
     else if (op == '*') {
         num1 = Number(num1) * Number(num2)
         answers.textContent = `${num1}` 
-        num2 = ''
+        num2 = 'none'
+        negNum = ''
+        op = 'none'
     }
     else if (op == '/') {
         num1 = Number(num1) / Number(num2)
+        console.log(num1)
         if (num2 != '0') {
             answers.textContent = `${num1}` 
-            num2 = ''
+            num2 = 'none'
+            negNum = ''
+            op = 'none'
+            console.log('Number1:', num1)
         }
         else if (num2 == '0') {
             answers.textContent = "bro you can't do that"
-            num2 = ''
+            num2 = 'none'
+            negNum = ''
+            op = 'none'
         }
     }
 }
@@ -371,4 +397,5 @@ function Clear() {
     op = 'none'
     num1 = 'none'
     num2 = 'none'
+    negNum = ''
 }
